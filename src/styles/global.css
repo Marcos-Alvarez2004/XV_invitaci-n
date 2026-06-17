@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #800020;
+  --animate-arrow-down: arrow-down 1.8s ease-in-out infinite;
+}
+
+@keyframes arrow-down {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+body {
+  font-family: "Montserrat Variable", sans-serif;
+  background-color: #fde3e3;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Emilys Candy", system-ui;
+}
