@@ -38,47 +38,48 @@ import Layout from "../layouts/Layout.astro";
   </main>
   <section
     id="section"
-    class="flex justify-center items-center bg-primary text-white px-6 py-8"
+    class="flex justify-center items-center bg-primary text-white px-2 py-8"
   >
     <p class="text-center">
-      <span class="font-medium">Queridos familiares y amigos</span>
+      <span class="font-medium">¡Voy a festejar mis XV!</span>
       <br />
       <br />
-      Con mucha alegría te invito a celebrar mis XV
+      Con mucha alegría te invito a que vengas a formar parte de este momento tan
+      especial para mí.
     </p>
   </section>
-  <section class="flex flex-col justify-center items-center mt-16 mb-32">
-    <span class="text-xl tracking-wider text-primary font-medium">
-      AGENDA LA FECHA
-    </span>
 
-    <h2 class="text-4xl mt-4 bar font-medium">24 de Octubre</h2>
-    <Countdown />
+  <section
+    class="flex flex-col justify-center items-center mt-16 mb-32 relative overflow-hidden"
+  >
+    <div class="text-center z-20">
+      <span class="text-xl tracking-wider text-primary font-medium">FECHA</span>
 
-    <a
-      href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=XV+de+Milena&dates=20261024T210000/20261025T030000&details=¡Te+esperamos!&location=Salón+de+Eventos"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="flex items-center text-primary border border-primary px-6 py-4 rounded-4xl text-lg font-medium hover:text-white hover:bg-primary transition-colors"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        fill="currentColor"
-        viewBox="0 0 24 24"
+      <h2 class="text-4xl mt-4 bar font-medium">24 de Octubre</h2>
+      <Countdown />
+
+      <a
+        href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=XV+de+Milena&dates=20261024T210000/20261025T030000&details=¡Te+esperamos!&location=Salón+de+Eventos"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center text-primary border border-primary px-6 py-4 rounded-4xl text-lg font-medium hover:text-white hover:bg-primary transition-colors"
       >
-        <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
-        <path
-          d="M19 4h-2V2h-2v2H9V2H7v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2M5 20V8h14V6v14z"
-        ></path>
-      </svg><span class="ml-2">AGENDAR FECHA</span>
-    </a>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
+          <path
+            d="M19 4h-2V2h-2v2H9V2H7v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2M5 20V8h14V6v14z"
+          ></path>
+        </svg><span class="ml-2">GUARDAR FECHA</span>
+      </a>
+    </div>
   </section>
   <section class="flex flex-col justify-center items-center mt-16 mb-32">
-    <span class="text-xl tracking-wider text-primary font-medium"
-      >NOS ENCONTRAMOS</span
-    >
     <h2 class="text-4xl mt-4 bar font-medium">Lugar & Horario</h2>
     <div class="mt-8">
       <Image src={confetti} alt="Confetti" class="size-30" />
@@ -117,7 +118,7 @@ import Layout from "../layouts/Layout.astro";
           ></path><path
             d="M11.42 21.81c.17.12.38.19.58.19s.41-.06.58-.19c.3-.22 7.45-5.37 7.42-11.82 0-4.41-3.59-8-8-8s-8 3.59-8 8c-.03 6.44 7.12 11.6 7.42 11.82M12 4c3.31 0 6 2.69 6 6 .02 4.44-4.39 8.43-6 9.74-1.61-1.31-6.02-5.29-6-9.74 0-3.31 2.69-6 6-6"
           ></path>
-        </svg><span class="ml-2">COMO LLEGAR</span>
+        </svg><span class="ml-2">UBICACIÓN</span>
       </a>
     </div>
   </section>
@@ -192,32 +193,35 @@ m-440 -541 c-46 -230 -89 -441 -94 -469 -9 -44 -17 -55 -51 -77 -48 -32 -51
         ></path>
       </g>
     </svg>
-    <h2 class="mt-4 text-4xl font-medium">Codigo de vestimenta</h2>
+    <h2 class="mt-4 text-4xl font-medium text-center">Codigo de vestimenta</h2>
     <span class="text-xl font-regular mt-4">Elegante Sport</span>
   </section>
 
-  <section class="flex flex-col justify-center items-center mt-16 mb-32">
-    <span class="text-2xl font-medium">¡Confirma tu asistencia!</span>
-    <p class="text-center text-xl mt-4 mb-12 px-6">
-      Te estare esperando, porfavor confirma tu asistencia.
-    </p>
-    <a
-      href="https://wa.me/1164378724"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="border border-white hover:border-primary text-white bg-primary px-20 py-4 rounded-4xl text-lg font-medium hover:text-primary hover:bg-white transition-colors"
-    >
-      Confirmar asistencia
-    </a>
+  <section
+    class="flex flex-col justify-center items-center mt-16 mb-32 relative"
+  >
+    <div class="text-center z-20">
+      <span class="text-2xl font-medium">¡Confirma tu asistencia!</span>
+      <p class="text-center text-xl mt-4 mb-12 px-6">
+        Te estare esperando, porfavor confirma tu asistencia.
+      </p>
+      <a
+        href="https://wa.me/1164378724"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="border border-white hover:border-primary text-white bg-primary px-20 py-4 rounded-4xl text-lg font-medium hover:text-primary hover:bg-white transition-colors"
+      >
+        Confirmar asistencia
+      </a>
+    </div>
   </section>
   <section class="flex flex-col justify-center items-center mt-16 mb-32 px-4">
     <div class="mt-8 w-full flex justify-center items-center">
       <Image src={gift} alt="" class="size-30" />
     </div>
     <p class="text-lg text-center font-regular mt-4">
-      El mejor regalo es que vengas, pero si deseas regalarme algo, podes
-      colaborar enviando a esta cuenta de mercado pago. <br />
-      !Muchas gracias!
+      ¡Lo más importante es que vengas a festejar conmigo! Si además querés
+      hacerme un regalo, te dejo mi cuenta.
     </p>
     <div class="flex flex-col justify-center items-center mt-8">
       <span class="text-lg font-medium">Alias: mix.xv.milena</span>
@@ -225,32 +229,37 @@ m-440 -541 c-46 -230 -89 -441 -94 -469 -9 -44 -17 -55 -51 -77 -48 -32 -51
       <span class="text-lg font-medium">Nombre: Vanesa Paola Duarte</span>
     </div>
   </section>
-
-  <script>
-    document.getElementById("boton")?.addEventListener("click", (e) => {
-      e.preventDefault();
-
-      document.getElementById("section")?.scrollIntoView({
-        behavior: "smooth",
-      });
-    });
-  </script>
-
-  <style>
-    .bar {
-      position: relative;
-    }
-
-    .bar::after {
-      content: "";
-      position: absolute;
-      bottom: -0.6rem;
-      left: 50%;
-      transform: translate(-50%, 0%);
-      width: 50%;
-      height: 0.2rem;
-      border-radius: 0.2rem;
-      background-color: var(--color-primary);
-    }
-  </style>
+  <footer
+    class="bg-primary text-white flex flex-col justify-center items-center mt-8 px-4 py-12 text-center"
+  >
+    <p>¡Espero que puedas venir y compartir este momento conmigo!</p>
+  </footer>
 </Layout>
+
+<script>
+  document.getElementById("boton")?.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    document.getElementById("section")?.scrollIntoView({
+      behavior: "smooth",
+    });
+  });
+</script>
+
+<style>
+  .bar {
+    position: relative;
+  }
+
+  .bar::after {
+    content: "";
+    position: absolute;
+    bottom: -0.6rem;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: 50%;
+    height: 0.2rem;
+    border-radius: 0.2rem;
+    background-color: var(--color-primary);
+  }
+</style>
