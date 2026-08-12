@@ -1,47 +1,58 @@
 ---
 import { Image } from "astro:assets";
-import flor from "../assets/flor.png";
-import confetti from "../assets/confetti.gif";
-import gift from "../assets/gift.gif";
+import background from "../assets/backgroundHero.jpg";
+import confetti from "../../public/gifs/confetti.gif";
+import gift from "../../public/gifs/gift.gif";
 import Countdown from "../components/Countdown.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-  <main
-    class="h-screen flex flex-col justify-center items-center relative w-full"
-  >
-    <Image src={flor} alt="flor rosa" class="size-60" />
-    <h1
-      class="text-primary tracking-wider text-8xl mb-8 text-center z-20 font-bold"
-    >
-      Mis XV Milena
-    </h1>
-    <!-- <span class="font-medium text-xl z-20">¡TE INVITO A MIS XV!</span> -->
+  <main class="h-screen relative w-full flex flex-col justify-center">
+    <Image
+      src={background}
+      alt="Fondo de la invitación"
+      class="w-full h-full object-cover"
+    />
 
-    <div class="my-8 flex justify-center items-center z-20">
-      <a href="#ven" id="boton">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-          class="size-24 text-primary animate-arrow-down"
+    <div class="absolute top-0 left-0 w-full h-full">
+      <div class="flex flex-col justify-center items-center h-full">
+        <h1
+          class="text-white tracking-wider text-9xl mb-8 text-center z-20 font-bold [text-shadow:2px_2px_4px_rgba(0,0,0,0.5)]"
         >
-          <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
-          <path d="m12 15.41 5.71-5.7-1.42-1.42-4.29 4.3-4.29-4.3-1.42 1.42z"
-          ></path>
-        </svg>
-      </a>
+          Milena
+        </h1>
+        <span
+          class="font-medium tracking-widest text-5xl z-20 text-white [text-shadow:2px_2px_4px_rgba(0,0,0,1)]"
+          >¡MIS XV!</span
+        >
+
+        <div class="my-8 flex justify-center items-center z-20">
+          <a href="#ven" id="boton">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              class="size-24 text-white animate-arrow-down"
+            >
+              <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
+              <path
+                d="m12 15.41 5.71-5.7-1.42-1.42-4.29 4.3-4.29-4.3-1.42 1.42z"
+              ></path>
+            </svg>
+          </a>
+        </div>
+      </div>
     </div>
   </main>
   <section
     id="section"
-    class="flex justify-center items-center bg-primary text-white px-2 py-8"
+    class="flex justify-center items-center bg-primary text-white px-2 py-8 mb-32"
   >
-    <p class="text-center">
-      <span class="font-medium">¡Voy a festejar mis XV!</span>
+    <p class="text-center text-lg">
+      <span class="font-medium text-xl">¡Voy a festejar mis XV!</span>
       <br />
       <br />
       Con mucha alegría te invito a que vengas a formar parte de este momento tan
@@ -50,7 +61,7 @@ import Layout from "../layouts/Layout.astro";
   </section>
 
   <section
-    class="flex flex-col justify-center items-center mt-16 mb-32 relative overflow-hidden"
+    class="flex flex-col justify-center items-center mb-32 relative overflow-hidden"
   >
     <div class="text-center z-20">
       <span class="text-xl tracking-wider text-primary font-medium">FECHA</span>
@@ -82,7 +93,7 @@ import Layout from "../layouts/Layout.astro";
   <section class="flex flex-col justify-center items-center mt-16 mb-32">
     <h2 class="text-4xl mt-4 bar font-medium">Lugar & Horario</h2>
     <div class="mt-8">
-      <Image src={confetti} alt="Confetti" class="size-30" />
+      <img src={confetti.src} alt="Confetti" class="size-30" />
     </div>
     <div class="mt-4 px-4 flex flex-col justify-center items-center gap-0.5">
       <span class="text-lg font-medium">Campo Deportivo</span>
@@ -202,7 +213,7 @@ m-440 -541 c-46 -230 -89 -441 -94 -469 -9 -44 -17 -55 -51 -77 -48 -32 -51
   >
     <div class="text-center z-20">
       <span class="text-2xl font-medium">¡Confirma tu asistencia!</span>
-      <p class="text-center text-xl mt-4 mb-12 px-6">
+      <p class="text-center text-lg mt-4 mb-12 px-6">
         Te estare esperando, porfavor confirma tu asistencia.
       </p>
       <a
@@ -217,20 +228,26 @@ m-440 -541 c-46 -230 -89 -441 -94 -469 -9 -44 -17 -55 -51 -77 -48 -32 -51
   </section>
   <section class="flex flex-col justify-center items-center mt-16 mb-32 px-4">
     <div class="mt-8 w-full flex justify-center items-center">
-      <Image src={gift} alt="" class="size-30" />
+      <img src={gift.src} alt="Regalo" class="size-30" />
     </div>
     <p class="text-lg text-center font-regular mt-4">
       ¡Lo más importante es que vengas a festejar conmigo! Si además querés
       hacerme un regalo, te dejo mi cuenta.
     </p>
     <div class="flex flex-col justify-center items-center mt-8">
-      <span class="text-lg font-medium">Alias: mix.xv.milena</span>
-      <span class="text-lg font-medium">CVU: 0000003100047206362936</span>
-      <span class="text-lg font-medium">Nombre: Vanesa Paola Duarte</span>
+      <span class="text-xl font-medium"
+        ><b class="text-secondary">Alias:</b> mix.xv.milena</span
+      >
+      <span class="text-xl font-medium"
+        ><b class="text-secondary">CVU:</b> 0000003100047206362936</span
+      >
+      <span class="text-xl font-medium"
+        ><b class="text-secondary">Nombre:</b> Vanesa Paola Duarte</span
+      >
     </div>
   </section>
   <footer
-    class="bg-primary text-white flex flex-col justify-center items-center mt-8 px-4 py-12 text-center"
+    class="bg-primary text-white flex flex-col justify-center items-center px-4 py-12 text-center text-lg"
   >
     <p>¡Espero que puedas venir y compartir este momento conmigo!</p>
   </footer>

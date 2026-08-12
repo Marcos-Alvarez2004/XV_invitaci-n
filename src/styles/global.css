@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #800020;
+  --color-primary: #852833;
+  --color-secondary: #702029;
   --animate-arrow-down: arrow-down 1.8s ease-in-out infinite;
 }
 
@@ -31,5 +32,5 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Emilys Candy", system-ui;
+  font-family: "Dancing Script Variable", cursive;
 }
