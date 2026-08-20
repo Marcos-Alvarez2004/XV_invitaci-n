@@ -10,34 +10,46 @@ if (new Date() > targetDate) {
 ---
 
 <div
-  class="flex justify-center mt-8 mb-12 text-center text-secondary text-4xl z-20"
+  class="flex justify-center mt-8 mb-12 text-center text-white text-4xl z-20"
 >
-  <div>
+  <div class="relative">
     <div>
-      <span id="days">00</span>
+      <span class="text-5xl font-medium" id="days">00</span>
     </div>
-    <span class="text-lg text-gray-600">DÍAS</span>
+    <span
+      class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-xl text-zinc-200"
+      >DÍAS</span
+    >
   </div>
-  <span class="opacity-40 mx-2">:</span>
-  <div>
+  <span class="mx-4 font-medium">:</span>
+  <div class="relative">
     <div>
-      <span id="hours">00</span>
+      <span class="text-5xl font-medium" id="hours">00</span>
     </div>
-    <span class="text-lg text-gray-600">HS</span>
+    <span
+      class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-xl text-zinc-200"
+      >HORAS</span
+    >
   </div>
-  <span class="opacity-40 mx-2">:</span>
-  <div>
+  <span class="mx-4 font-medium">:</span>
+  <div class="relative">
     <div>
-      <span id="minutes">00</span>
+      <span class="text-5xl font-medium" id="minutes">00</span>
     </div>
-    <span class="text-lg text-gray-600">MIN</span>
+    <span
+      class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-xl text-zinc-200"
+      >MINUTOS</span
+    >
   </div>
-  <span class="opacity-40 mx-2">:</span>
-  <div>
+  <span class="mx-4 font-medium">:</span>
+  <div class="relative">
     <div>
-      <span id="seconds">00</span>
+      <span class="text-5xl font-medium" id="seconds">00</span>
     </div>
-    <span class="text-lg text-gray-600">SEG</span>
+    <span
+      class="absolute -bottom-8 left-3/5 transform -translate-x-1/2 text-xl text-zinc-200"
+      >SEGUNDOS</span
+    >
   </div>
 </div>
 

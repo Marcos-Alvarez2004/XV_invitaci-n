@@ -1,8 +1,9 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #852833;
+  --color-primary: #c04657;
   --color-secondary: #702029;
+  --color-bg-primary: #eed9c4;
   --animate-arrow-down: arrow-down 1.8s ease-in-out infinite;
 }
 
@@ -17,8 +18,8 @@
 }
 
 body {
-  font-family: "Montserrat Variable", sans-serif;
-  background-color: #f7e3e3;
+  font-family: "Caveat Variable", cursive;
+  background-color: var(--background-color);
   overflow-x: hidden !important;
 }
 
@@ -26,11 +27,46 @@ html {
   scroll-behavior: smooth;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Dancing Script Variable", cursive;
+.greatVibes {
+  font-family: "Great Vibes", cursive;
+}
+
+.platinum {
+  background: linear-gradient(
+    110deg,
+    #8d9399 0%,
+    #e5e7e9 25%,
+    #ffffff 40%,
+    #c8cdd1 50%,
+    #ffffff 60%,
+    #aeb4b9 75%,
+    #f1f3f4 100%
+  );
+  box-shadow:
+    0 0 10px rgba(255, 255, 255, 0.5),
+    0 0 30px rgba(220, 225, 230, 0.35);
+}
+
+.platinum-text {
+  background: linear-gradient(
+    110deg,
+    #8d9399 0%,
+    #e5e7e9 25%,
+    #ffffff 40%,
+    #c8cdd1 50%,
+    #ffffff 60%,
+    #aeb4b9 75%,
+    #f1f3f4 100%
+  );
+
+  background-size: 100% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+
+  text-shadow:
+    0 0 8px rgba(255, 255, 255, 0.4),
+    0 0 20px rgba(210, 220, 230, 0.25);
+
+  -webkit-text-stroke: 0.3px rgba(255, 255, 255, 0.5);
 }

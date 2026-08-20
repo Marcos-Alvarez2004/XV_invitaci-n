@@ -1,58 +1,248 @@
 ---
 import { Image } from "astro:assets";
-import background from "../assets/backgroundHero.jpg";
-import confetti from "../../public/gifs/confetti.gif";
-import gift from "../../public/gifs/gift.gif";
 import Countdown from "../components/Countdown.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-  <main class="h-screen relative w-full flex flex-col justify-center">
-    <Image
-      src={background}
-      alt="Fondo de la invitación"
-      class="w-full h-full object-cover"
-    />
+  <main
+    class="h-[90vh] relative w-full flex flex-col justify-center bg-primary"
+  >
+    <divz
+      class="absolute left-1/2 transform -translate-x-1/2 border-4 border-slate-200 w-[95%] h-[95%]"
+    ></divz>
+
+    <svg
+      version="1.0"
+      xmlns="http://www.w3.org/2000/svg"
+      class="absolute size-35 text-slate-200 bg-primary top-0 left-0 rotate-280 -scale-x-100 p-2"
+      viewBox="0 0 512.000000 512.000000"
+      preserveAspectRatio="xMidYMid meet"
+    >
+      <g
+        transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+        fill="currentColor"
+        stroke="none"
+      >
+        <path
+          d="M2185 5012 c-76 -35 -85 -93 -40 -247 70 -241 210 -452 389 -589 210
+-160 466 -238 793 -240 89 -1 159 -4 155 -7 -4 -4 -110 -51 -237 -104 -239
+-101 -409 -182 -508 -242 -31 -19 -61 -33 -66 -31 -5 2 -37 39 -72 83 -230
+288 -587 561 -927 710 -226 99 -403 143 -618 152 -135 6 -142 5 -163 -16 -31
+-31 -28 -84 5 -110 21 -17 41 -21 98 -21 344 0 742 -158 1104 -439 99 -77 280
+-246 313 -293 20 -28 20 -28 -158 33 -98 34 -333 120 -522 191 -314 118 -347
+128 -373 117 -52 -21 -63 -71 -25 -113 14 -16 71 -44 153 -75 206 -79 520
+-195 624 -231 52 -18 99 -37 103 -41 5 -3 -76 -10 -180 -14 -202 -8 -462 4
+-617 29 -287 47 -644 233 -1100 570 l-108 81 68 32 c78 37 250 95 337 114 92
+20 125 82 72 134 -30 31 -40 31 -160 0 -186 -49 -397 -138 -444 -189 -31 -33
+-40 -110 -17 -153 29 -56 440 -351 671 -480 437 -246 697 -305 1265 -289 129
+4 271 10 315 15 44 4 81 7 83 6 1 -1 -37 -35 -85 -76 -48 -40 -150 -135 -225
+-211 l-138 -138 -94 63 c-422 284 -939 380 -1331 245 -156 -53 -298 -133 -423
+-237 -97 -81 -121 -135 -88 -199 23 -44 45 -58 156 -100 356 -135 677 -204
+875 -188 157 13 445 84 634 157 41 16 76 28 77 26 2 -1 -33 -54 -77 -117 -45
+-63 -111 -164 -147 -223 l-67 -108 -35 5 c-19 3 -73 6 -120 7 l-85 0 -30 42
+c-78 107 -225 125 -325 39 -125 -106 -102 -297 45 -375 55 -29 145 -29 202 1
+45 23 100 84 109 120 6 20 12 22 80 22 42 0 74 -4 74 -10 0 -5 -19 -47 -41
+-92 -39 -78 -46 -86 -127 -143 -103 -72 -277 -241 -354 -345 -266 -358 -344
+-701 -247 -1084 42 -164 90 -248 150 -261 71 -16 108 11 243 180 149 185 267
+373 330 525 71 173 103 434 93 758 l-6 194 84 166 c82 161 170 310 283 475 30
+43 55 77 57 75 2 -2 -10 -48 -26 -103 -121 -404 -185 -832 -160 -1067 31 -294
+164 -704 362 -1115 46 -96 66 -128 92 -143 85 -53 152 -31 232 75 265 353 402
+798 366 1190 -26 277 -109 564 -240 830 -108 219 -251 434 -374 562 l-41 43
+130 131 c120 122 319 299 337 299 4 0 7 -30 7 -66 0 -76 29 -229 63 -329 l24
+-69 -29 -41 c-99 -142 -8 -341 163 -353 78 -6 136 16 187 72 81 88 83 211 5
+297 -44 49 -81 69 -141 78 -44 6 -45 7 -64 61 -51 149 -72 355 -46 443 9 31
+23 47 63 72 76 49 221 128 300 163 113 51 538 233 557 239 11 3 -12 -43 -63
+-129 -162 -270 -316 -608 -367 -803 -12 -44 -27 -118 -33 -165 -18 -122 -15
+-474 5 -658 21 -197 74 -508 91 -541 41 -79 134 -112 208 -75 85 44 278 229
+389 375 65 84 156 232 164 266 7 28 -18 70 -49 84 -32 15 -74 -4 -95 -42 -86
+-158 -234 -342 -375 -467 -110 -97 -102 -99 -126 31 -80 420 -97 852 -46 1098
+31 147 119 365 239 594 74 141 194 345 203 345 11 0 -6 -232 -27 -375 -29
+-197 -63 -359 -122 -585 -65 -252 -64 -240 -38 -273 23 -29 65 -36 100 -17 22
+12 49 95 104 315 63 253 81 356 134 745 l7 55 27 -95 c98 -350 115 -718 46
+-1023 l-21 -98 20 -27 c22 -30 69 -40 102 -22 24 12 42 71 68 210 25 138 25
+541 0 695 -37 222 -99 439 -176 615 -23 52 -44 100 -46 105 -3 6 94 60 214
+122 l218 112 5 -156 6 -156 -35 -35 c-46 -46 -66 -94 -66 -162 0 -102 75 -196
+174 -220 170 -41 326 134 264 296 -29 77 -77 120 -166 147 -10 3 -18 22 -23
+53 -8 59 -6 271 3 302 4 17 49 49 161 114 222 130 389 238 411 266 10 14 19
+36 19 49 0 30 -42 73 -71 73 -11 0 -87 -42 -168 -94 -81 -51 -207 -128 -280
+-171 l-132 -76 -82 55 c-45 30 -106 77 -136 104 -53 47 -54 49 -43 82 76 215
+-191 394 -360 242 -171 -154 -37 -433 188 -391 40 8 50 6 73 -14 15 -12 63
+-51 107 -86 43 -34 83 -67 87 -71 7 -6 -313 -182 -374 -205 -11 -4 -29 15 -65
+67 -63 93 -216 253 -309 322 -147 111 -238 150 -465 197 -386 80 -627 165
+-765 269 -53 39 -90 45 -140 22z m327 -291 c112 -44 297 -95 508 -140 102 -22
+205 -47 230 -55 70 -26 164 -82 246 -148 81 -66 237 -235 231 -253 -12 -35
+-473 -51 -637 -21 -384 69 -648 280 -770 615 -17 45 -30 88 -30 95 0 9 24 1
+73 -24 39 -21 107 -52 149 -69z m1533 64 c50 -49 19 -125 -50 -125 -44 0 -75
+29 -75 70 0 38 39 80 75 80 14 0 37 -11 50 -25z m494 -1040 c46 -23 55 -76 21
+-112 -27 -30 -55 -36 -87 -21 -54 26 -56 108 -3 135 32 16 35 16 69 -2z
+m-3389 -620 c101 -20 275 -75 368 -116 85 -38 242 -128 242 -138 0 -9 -211
+-87 -341 -126 -113 -33 -257 -64 -349 -75 -183 -21 -499 42 -813 162 -77 30
+-78 30 -60 50 25 28 166 120 240 157 82 41 192 77 290 96 97 18 301 13 423
+-10z m1675 -460 c14 -13 25 -36 25 -50 0 -14 -11 -37 -25 -50 -69 -70 -170 30
+-103 102 29 31 72 30 103 -2z m-801 -390 c31 -216 61 -524 76 -770 12 -192 19
+-218 65 -229 32 -8 81 16 90 45 20 61 -50 826 -101 1114 -9 50 99 -122 181
+-290 154 -316 225 -595 225 -891 0 -329 -102 -637 -311 -934 l-53 -75 -38 80
+c-189 400 -318 796 -348 1068 -23 202 28 549 137 944 20 74 40 130 44 126 4
+-4 19 -89 33 -188z m-951 -57 c33 -39 18 -97 -32 -117 -60 -25 -117 34 -95 98
+18 52 90 63 127 19z m206 -659 c3 -242 -34 -501 -89 -630 -58 -138 -212 -372
+-357 -544 -29 -35 -32 -36 -41 -18 -20 36 -53 178 -64 276 -29 241 41 481 216
+737 28 41 111 136 186 210 l135 135 6 -30 c4 -16 7 -78 8 -136z"
+        ></path>
+      </g>
+    </svg>
+
+    <svg
+      version="1.0"
+      xmlns="http://www.w3.org/2000/svg"
+      class="absolute size-35 text-slate-200 bg-primary bottom-0 right-0 rotate-0 -scale-100 p-2"
+      viewBox="0 0 512.000000 512.000000"
+      preserveAspectRatio="xMidYMid meet"
+    >
+      <g
+        transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+        fill="currentColor"
+        stroke="none"
+      >
+        <path
+          d="M2185 5012 c-76 -35 -85 -93 -40 -247 70 -241 210 -452 389 -589 210
+-160 466 -238 793 -240 89 -1 159 -4 155 -7 -4 -4 -110 -51 -237 -104 -239
+-101 -409 -182 -508 -242 -31 -19 -61 -33 -66 -31 -5 2 -37 39 -72 83 -230
+288 -587 561 -927 710 -226 99 -403 143 -618 152 -135 6 -142 5 -163 -16 -31
+-31 -28 -84 5 -110 21 -17 41 -21 98 -21 344 0 742 -158 1104 -439 99 -77 280
+-246 313 -293 20 -28 20 -28 -158 33 -98 34 -333 120 -522 191 -314 118 -347
+128 -373 117 -52 -21 -63 -71 -25 -113 14 -16 71 -44 153 -75 206 -79 520
+-195 624 -231 52 -18 99 -37 103 -41 5 -3 -76 -10 -180 -14 -202 -8 -462 4
+-617 29 -287 47 -644 233 -1100 570 l-108 81 68 32 c78 37 250 95 337 114 92
+20 125 82 72 134 -30 31 -40 31 -160 0 -186 -49 -397 -138 -444 -189 -31 -33
+-40 -110 -17 -153 29 -56 440 -351 671 -480 437 -246 697 -305 1265 -289 129
+4 271 10 315 15 44 4 81 7 83 6 1 -1 -37 -35 -85 -76 -48 -40 -150 -135 -225
+-211 l-138 -138 -94 63 c-422 284 -939 380 -1331 245 -156 -53 -298 -133 -423
+-237 -97 -81 -121 -135 -88 -199 23 -44 45 -58 156 -100 356 -135 677 -204
+875 -188 157 13 445 84 634 157 41 16 76 28 77 26 2 -1 -33 -54 -77 -117 -45
+-63 -111 -164 -147 -223 l-67 -108 -35 5 c-19 3 -73 6 -120 7 l-85 0 -30 42
+c-78 107 -225 125 -325 39 -125 -106 -102 -297 45 -375 55 -29 145 -29 202 1
+45 23 100 84 109 120 6 20 12 22 80 22 42 0 74 -4 74 -10 0 -5 -19 -47 -41
+-92 -39 -78 -46 -86 -127 -143 -103 -72 -277 -241 -354 -345 -266 -358 -344
+-701 -247 -1084 42 -164 90 -248 150 -261 71 -16 108 11 243 180 149 185 267
+373 330 525 71 173 103 434 93 758 l-6 194 84 166 c82 161 170 310 283 475 30
+43 55 77 57 75 2 -2 -10 -48 -26 -103 -121 -404 -185 -832 -160 -1067 31 -294
+164 -704 362 -1115 46 -96 66 -128 92 -143 85 -53 152 -31 232 75 265 353 402
+798 366 1190 -26 277 -109 564 -240 830 -108 219 -251 434 -374 562 l-41 43
+130 131 c120 122 319 299 337 299 4 0 7 -30 7 -66 0 -76 29 -229 63 -329 l24
+-69 -29 -41 c-99 -142 -8 -341 163 -353 78 -6 136 16 187 72 81 88 83 211 5
+297 -44 49 -81 69 -141 78 -44 6 -45 7 -64 61 -51 149 -72 355 -46 443 9 31
+23 47 63 72 76 49 221 128 300 163 113 51 538 233 557 239 11 3 -12 -43 -63
+-129 -162 -270 -316 -608 -367 -803 -12 -44 -27 -118 -33 -165 -18 -122 -15
+-474 5 -658 21 -197 74 -508 91 -541 41 -79 134 -112 208 -75 85 44 278 229
+389 375 65 84 156 232 164 266 7 28 -18 70 -49 84 -32 15 -74 -4 -95 -42 -86
+-158 -234 -342 -375 -467 -110 -97 -102 -99 -126 31 -80 420 -97 852 -46 1098
+31 147 119 365 239 594 74 141 194 345 203 345 11 0 -6 -232 -27 -375 -29
+-197 -63 -359 -122 -585 -65 -252 -64 -240 -38 -273 23 -29 65 -36 100 -17 22
+12 49 95 104 315 63 253 81 356 134 745 l7 55 27 -95 c98 -350 115 -718 46
+-1023 l-21 -98 20 -27 c22 -30 69 -40 102 -22 24 12 42 71 68 210 25 138 25
+541 0 695 -37 222 -99 439 -176 615 -23 52 -44 100 -46 105 -3 6 94 60 214
+122 l218 112 5 -156 6 -156 -35 -35 c-46 -46 -66 -94 -66 -162 0 -102 75 -196
+174 -220 170 -41 326 134 264 296 -29 77 -77 120 -166 147 -10 3 -18 22 -23
+53 -8 59 -6 271 3 302 4 17 49 49 161 114 222 130 389 238 411 266 10 14 19
+36 19 49 0 30 -42 73 -71 73 -11 0 -87 -42 -168 -94 -81 -51 -207 -128 -280
+-171 l-132 -76 -82 55 c-45 30 -106 77 -136 104 -53 47 -54 49 -43 82 76 215
+-191 394 -360 242 -171 -154 -37 -433 188 -391 40 8 50 6 73 -14 15 -12 63
+-51 107 -86 43 -34 83 -67 87 -71 7 -6 -313 -182 -374 -205 -11 -4 -29 15 -65
+67 -63 93 -216 253 -309 322 -147 111 -238 150 -465 197 -386 80 -627 165
+-765 269 -53 39 -90 45 -140 22z m327 -291 c112 -44 297 -95 508 -140 102 -22
+205 -47 230 -55 70 -26 164 -82 246 -148 81 -66 237 -235 231 -253 -12 -35
+-473 -51 -637 -21 -384 69 -648 280 -770 615 -17 45 -30 88 -30 95 0 9 24 1
+73 -24 39 -21 107 -52 149 -69z m1533 64 c50 -49 19 -125 -50 -125 -44 0 -75
+29 -75 70 0 38 39 80 75 80 14 0 37 -11 50 -25z m494 -1040 c46 -23 55 -76 21
+-112 -27 -30 -55 -36 -87 -21 -54 26 -56 108 -3 135 32 16 35 16 69 -2z
+m-3389 -620 c101 -20 275 -75 368 -116 85 -38 242 -128 242 -138 0 -9 -211
+-87 -341 -126 -113 -33 -257 -64 -349 -75 -183 -21 -499 42 -813 162 -77 30
+-78 30 -60 50 25 28 166 120 240 157 82 41 192 77 290 96 97 18 301 13 423
+-10z m1675 -460 c14 -13 25 -36 25 -50 0 -14 -11 -37 -25 -50 -69 -70 -170 30
+-103 102 29 31 72 30 103 -2z m-801 -390 c31 -216 61 -524 76 -770 12 -192 19
+-218 65 -229 32 -8 81 16 90 45 20 61 -50 826 -101 1114 -9 50 99 -122 181
+-290 154 -316 225 -595 225 -891 0 -329 -102 -637 -311 -934 l-53 -75 -38 80
+c-189 400 -318 796 -348 1068 -23 202 28 549 137 944 20 74 40 130 44 126 4
+-4 19 -89 33 -188z m-951 -57 c33 -39 18 -97 -32 -117 -60 -25 -117 34 -95 98
+18 52 90 63 127 19z m206 -659 c3 -242 -34 -501 -89 -630 -58 -138 -212 -372
+-357 -544 -29 -35 -32 -36 -41 -18 -20 36 -53 178 -64 276 -29 241 41 481 216
+737 28 41 111 136 186 210 l135 135 6 -30 c4 -16 7 -78 8 -136z"
+        ></path>
+      </g>
+    </svg>
 
     <div class="absolute top-0 left-0 w-full h-full">
       <div class="flex flex-col justify-center items-center h-full">
         <h1
-          class="text-white tracking-wider text-9xl mb-8 text-center z-20 font-bold [text-shadow:2px_2px_4px_rgba(0,0,0,0.5)]"
+          class="text-slate-200 [text-shadow:0_0_8px_rgba(226,232,240,0.6)] tracking-wider text-[7rem] mb-2 text-center z-20 greatVibes font-medium"
         >
           Milena
         </h1>
-        <span
-          class="font-medium tracking-widest text-5xl z-20 text-white [text-shadow:2px_2px_4px_rgba(0,0,0,1)]"
-          >¡MIS XV!</span
-        >
+        <div class="relative">
+          <span
+            class="font-medium tracking-widest text-4xl z-20 text-slate-200 [text-shadow:0_0_8px_rgba(226,232,240,0.6)]"
+            >¡MIS XV!</span
+          >
 
-        <div class="my-8 flex justify-center items-center z-20">
-          <a href="#ven" id="boton">
+          <div
+            class="absolute -bottom-15 left-1/2 transform -translate-x-1/2 w-3/4 h-full"
+          >
             <svg
+              version="1.0"
               xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-              class="size-24 text-white animate-arrow-down"
+              class="size-8 absolute -top-3 left-1/2 transform -translate-x-1/2 text-slate-200 [text-shadow:0_0_8px_rgba(226,232,240,0.6)]"
+              viewBox="0 0 512.000000 512.000000"
+              preserveAspectRatio="xMidYMid meet"
             >
-              <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
-              <path
-                d="m12 15.41 5.71-5.7-1.42-1.42-4.29 4.3-4.29-4.3-1.42 1.42z"
-              ></path>
+              <g
+                transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+                fill="currentColor"
+                stroke="none"
+              >
+                <path
+                  d="M1175 4806 c-208 -31 -377 -96 -560 -215 -102 -66 -280 -247 -355
+-361 -267 -408 -332 -927 -173 -1400 95 -283 278 -563 584 -896 226 -246 438
+-439 1286 -1166 561 -483 556 -479 637 -464 19 4 49 19 68 34 69 55 1039 891
+1208 1041 584 517 880 857 1064 1220 147 290 205 583 178 889 -36 390 -173
+696 -426 947 -177 176 -371 287 -601 344 -369 91 -738 24 -1038 -190 -161
+-114 -339 -312 -443 -491 -21 -37 -41 -68 -44 -68 -3 0 -23 31 -44 68 -104
+179 -282 377 -443 491 -90 64 -228 136 -318 166 -168 56 -405 77 -580 51z"
+                ></path>
+              </g>
             </svg>
-          </a>
+            <span
+              class="block w-full h-1.5 rounded bg-slate-200 shadow-[0_0_10px_rgba(226,232,240,0.6)]"
+            ></span>
+          </div>
+
+          <div class="flex justify-center z-20 mt-8">
+            <a href="#ven" id="boton">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                class="size-24 text-white animate-arrow-down"
+              >
+                <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                <path
+                  d="m12 15.41 5.71-5.7-1.42-1.42-4.29 4.3-4.29-4.3-1.42 1.42z"
+                ></path>
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </main>
   <section
     id="section"
-    class="flex justify-center items-center bg-primary text-white px-2 py-8 mb-32"
+    class="flex justify-center items-center px-2 py-8 mt-16 mb-32"
   >
-    <p class="text-center text-lg">
-      <span class="font-medium text-xl">¡Voy a festejar mis XV!</span>
+    <p class="text-center text-3xl">
+      <span class="font-medium text-4xl">¡Voy a festejar mis XV!</span>
       <br />
       <br />
       Con mucha alegría te invito a que vengas a formar parte de este momento tan
@@ -61,65 +251,194 @@ import Layout from "../layouts/Layout.astro";
   </section>
 
   <section
-    class="flex flex-col justify-center items-center mb-32 relative overflow-hidden"
+    class="flex flex-col justify-center items-center mb-32 relative w-full bg-primary py-20 text-white"
   >
-    <div class="text-center z-20">
-      <span class="text-xl tracking-wider text-primary font-medium">FECHA</span>
+    <div class="flex justify-center items-center gap-10">
+      <div class="w-24 text-center">
+        <span class="block w-full h-0.5 bg-bg-primary rounded-full"></span>
+        <span class="block my-3 text-2xl">SÁBADO</span>
+        <span class="block w-full h-0.5 bg-bg-primary rounded-full"></span>
+      </div>
 
-      <h2 class="text-4xl mt-4 bar font-medium">24 de Octubre</h2>
-      <Countdown />
-
-      <a
-        href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Cumpleaños+15+de+Milena&dates=20261024T210000/20261025T040000&details=¡Te+esperamos!&location=Campo+Deportivo+|+Azcuénaga+4700-4798&sf=true&output=xml"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="flex items-center text-primary border border-primary px-6 py-4 rounded-4xl text-lg font-medium hover:text-white hover:bg-primary transition-colors"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          fill="currentColor"
-          viewBox="0 0 24 24"
+      <div class="relative">
+        <span
+          class="absolute -top-8 left-1/2 transform -translate-x-1/2 text-2xl"
+          >OCTUBRE</span
         >
-          <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
-          <path
-            d="M19 4h-2V2h-2v2H9V2H7v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2M5 20V8h14V6v14z"
-          ></path>
-        </svg><span class="ml-2">GUARDAR FECHA</span>
-      </a>
+        <span class="text-8xl greatVibes">24</span>
+      </div>
+
+      <div class="w-24 text-center">
+        <span class="block w-full h-0.5 bg-bg-primary rounded-full"></span>
+        <span class="block my-3 text-3xl">2026</span>
+        <span class="block w-full h-0.5 bg-bg-primary rounded-full"></span>
+      </div>
+    </div>
+    <div class="text-center mt-20">
+      <h4 class="text-4xl font-bold tracking-widest">FALTAN</h4>
+      <Countdown />
     </div>
   </section>
   <section class="flex flex-col justify-center items-center mt-16 mb-32">
-    <h2 class="text-4xl mt-4 bar font-medium">Lugar & Horario</h2>
+    <h2 class="text-5xl mb-8 bar font-medium greatVibes">Lugar & Horario</h2>
     <div class="mt-8">
-      <img src={confetti.src} alt="Confetti" class="size-30" />
+      <!--?xml version="1.0" standalone="no"?-->
+
+      <svg
+        version="1.0"
+        xmlns="http://www.w3.org/2000/svg"
+        class="size-25"
+        viewBox="0 0 512.000000 512.000000"
+        preserveAspectRatio="xMidYMid meet"
+      >
+        <g
+          transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+          fill="#000000"
+          stroke="none"
+        >
+          <path
+            d="M490 5113 c-33 -12 -55 -43 -110 -153 l-58 -116 -133 -18 c-120 -17
+-137 -22 -161 -47 -49 -48 -40 -69 76 -188 l105 -106 -24 -133 c-26 -143 -24
+-168 17 -196 37 -26 64 -19 190 46 l120 63 121 -63 c67 -34 135 -62 150 -62
+36 0 77 41 77 76 0 15 -9 81 -20 147 l-21 120 101 102 c89 91 100 106 100 137
+0 67 -21 79 -176 103 l-139 21 -60 117 c-33 64 -67 123 -75 131 -18 17 -59 27
+-80 19z m104 -412 c8 -7 47 -18 86 -24 38 -6 70 -13 70 -17 0 -4 -18 -21 -40
+-39 -62 -50 -75 -82 -61 -157 6 -34 11 -66 11 -72 0 -6 -30 5 -66 24 -36 19
+-72 34 -80 34 -8 0 -45 -15 -83 -34 l-68 -35 8 42 c4 23 8 62 9 87 0 42 -4 50
+-50 95 -27 27 -50 52 -50 56 0 4 26 10 57 14 86 11 107 25 143 102 l32 68 33
+-66 c18 -36 40 -71 49 -78z"
+          ></path>
+          <path
+            d="M1804 5101 c-63 -29 -89 -72 -89 -151 0 -77 24 -119 85 -150 163 -83
+326 121 207 257 -56 63 -127 79 -203 44z"
+          ></path>
+          <path
+            d="M4209 5091 c-27 -27 -29 -35 -29 -101 0 -62 3 -74 25 -95 37 -38 88
+-37 123 1 19 21 22 36 22 97 -1 75 -9 95 -47 115 -35 19 -63 14 -94 -17z"
+          ></path>
+          <path
+            d="M3952 4837 c-28 -30 -30 -89 -3 -116 24 -24 78 -35 139 -28 83 9 121
+89 67 142 -21 22 -33 25 -103 25 -69 0 -81 -3 -100 -23z"
+          ></path>
+          <path
+            d="M4380 4840 c-42 -42 -32 -111 20 -137 34 -17 125 -16 159 2 40 20 57
+66 41 105 -17 42 -37 50 -124 50 -62 0 -80 -4 -96 -20z"
+          ></path>
+          <path
+            d="M4222 4683 c-37 -15 -57 -146 -30 -196 28 -53 92 -64 133 -22 22 21
+25 33 25 100 0 67 -3 79 -25 100 -23 24 -69 32 -103 18z"
+          ></path>
+          <path
+            d="M1935 4587 c-35 -30 -36 -47 -5 -212 31 -169 39 -499 16 -675 -35
+-264 -81 -426 -207 -732 -49 -119 -89 -228 -89 -243 0 -61 95 -100 138 -57 18
+18 65 123 159 357 87 215 149 468 174 703 15 143 6 501 -15 632 -33 210 -45
+236 -107 246 -28 5 -41 1 -64 -19z"
+          ></path>
+          <path
+            d="M2562 4421 c-162 -56 -223 -256 -119 -393 71 -93 204 -125 312 -74
+121 56 177 202 125 324 -29 68 -93 126 -161 146 -67 20 -91 20 -157 -3z m146
+-187 c48 -54 10 -134 -63 -134 -69 0 -108 73 -69 128 33 48 92 50 132 6z"
+          ></path>
+          <path
+            d="M3182 4157 c-21 -23 -22 -30 -22 -273 l0 -251 26 -24 26 -24 243 0
+243 0 26 24 26 24 0 252 c0 250 0 252 -23 273 -23 21 -30 22 -273 22 -249 0
+-251 0 -272 -23z m398 -272 l0 -125 -125 0 -125 0 0 125 0 125 125 0 125 0 0
+-125z"
+          ></path>
+          <path
+            d="M4572 3915 c-39 -17 -52 -48 -52 -126 0 -54 3 -64 29 -90 38 -37 82
+-39 116 -4 22 21 25 33 25 103 0 69 -3 81 -22 99 -32 29 -58 34 -96 18z"
+          ></path>
+          <path
+            d="M1127 3900 c-50 -13 -126 -52 -158 -82 -140 -130 -142 -361 -7 -678
+180 -424 644 -998 1113 -1377 261 -211 586 -412 783 -483 41 -15 59 -26 50
+-31 -7 -4 -139 -55 -293 -114 -209 -79 -287 -105 -309 -101 -40 8 -280 125
+-380 186 -574 346 -988 942 -1116 1608 -22 113 -35 137 -80 147 -55 12 -99
+-28 -100 -89 -1 -105 105 -466 195 -666 234 -521 659 -971 1159 -1227 l109
+-55 -498 -189 -498 -188 -61 55 c-177 159 -300 359 -362 589 -23 86 -38 210
+-65 545 -6 80 -18 157 -25 172 -25 49 -103 52 -138 5 l-20 -28 23 -277 c32
+-395 60 -519 157 -715 71 -143 131 -226 245 -343 l69 -70 -351 -133 c-193 -73
+-352 -131 -355 -129 -2 3 26 123 61 269 36 145 63 274 60 287 -15 63 -105 86
+-143 37 -13 -16 -48 -140 -101 -358 -105 -428 -101 -399 -63 -437 17 -16 39
+-30 49 -30 17 0 237 82 1288 480 99 37 587 221 1085 409 498 188 924 351 948
+363 53 26 108 86 135 147 31 69 36 229 9 341 -35 146 -59 200 -98 216 -37 15
+-58 11 -91 -19 -30 -27 -29 -62 3 -162 36 -108 44 -264 17 -314 -24 -47 -58
+-69 -122 -81 -177 -33 -508 107 -888 377 -508 360 -1043 980 -1244 1443 -49
+113 -89 263 -89 333 0 141 77 211 224 205 70 -3 106 25 106 82 0 59 -33 82
+-122 86 -40 2 -90 -1 -111 -6z"
+          ></path>
+          <path
+            d="M4249 3771 c-45 -46 -39 -74 29 -143 69 -68 97 -74 143 -29 40 41 38
+77 -7 129 -65 77 -118 90 -165 43z"
+          ></path>
+          <path
+            d="M4822 3746 c-48 -47 -56 -59 -56 -91 0 -29 7 -43 28 -61 45 -40 81
+-32 143 29 45 46 53 60 53 91 0 48 -36 86 -80 86 -25 0 -44 -12 -88 -54z"
+          ></path>
+          <path
+            d="M2934 3478 c-42 -33 -824 -735 -856 -769 -19 -20 -28 -40 -28 -62 0
+-58 64 -102 113 -80 22 10 840 740 885 789 31 35 29 79 -7 115 -35 35 -68 37
+-107 7z"
+          ></path>
+          <path
+            d="M4465 3481 c-370 -171 -1776 -848 -1792 -864 -51 -47 -15 -137 55
+-137 19 0 102 34 209 85 98 46 500 237 893 424 393 187 728 351 745 364 40 32
+41 89 1 123 -33 29 -58 30 -111 5z"
+          ></path>
+          <path
+            d="M4894 3476 c-39 -33 -39 -89 0 -122 23 -21 38 -24 101 -24 70 0 75 2
+99 31 34 40 33 74 -3 110 -27 27 -35 29 -100 29 -59 0 -74 -4 -97 -24z"
+          ></path>
+          <path
+            d="M4809 3245 c-32 -17 -52 -66 -40 -98 5 -12 31 -43 59 -70 60 -55 98
+-62 137 -22 38 37 34 85 -12 136 -37 40 -81 69 -105 69 -7 -1 -25 -7 -39 -15z"
+          ></path>
+          <path
+            d="M4570 3147 c-38 -19 -51 -54 -48 -130 4 -76 21 -102 74 -113 24 -4
+37 0 62 21 31 26 32 29 32 103 -1 80 -8 100 -47 120 -27 15 -42 15 -73 -1z"
+          ></path>
+          <path
+            d="M3150 2304 c-103 -7 -305 -35 -470 -63 -182 -32 -200 -42 -200 -108
+0 -40 37 -83 71 -83 12 0 87 11 168 25 288 48 389 58 596 58 300 0 527 -36
+816 -129 148 -48 171 -48 203 -2 23 33 20 75 -8 103 -52 51 -455 158 -699 185
+-109 11 -392 20 -477 14z"
+          ></path>
+          <path
+            d="M4613 2036 c-225 -74 -231 -396 -9 -481 55 -21 154 -17 203 8 70 37
+128 120 139 200 14 98 -49 212 -140 259 -50 26 -138 32 -193 14z m131 -178
+c40 -35 43 -78 11 -116 -34 -41 -84 -44 -120 -7 -75 74 31 192 109 123z"
+          ></path>
+          <path
+            d="M3866 1419 c-54 -63 -20 -121 84 -145 219 -50 428 -163 569 -307 l43
+-45 -53 -16 c-119 -34 -241 -133 -297 -240 -24 -45 -27 -62 -27 -146 0 -113
+22 -167 95 -240 71 -72 127 -94 235 -95 77 0 98 4 146 26 109 51 176 146 203
+286 l13 68 29 -60 c27 -55 29 -69 29 -170 0 -99 -3 -116 -27 -169 -16 -32 -28
+-71 -28 -85 0 -33 31 -68 67 -77 85 -22 163 139 163 333 0 103 -18 181 -63
+272 -33 68 -129 179 -179 209 -16 9 -55 52 -85 96 -179 255 -446 440 -744 515
+-116 29 -141 28 -173 -10z m798 -699 c30 -37 40 -80 34 -163 -8 -134 -84 -214
+-193 -205 -131 11 -198 147 -126 260 48 75 148 137 223 138 28 0 42 -7 62 -30z"
+          ></path>
+        </g>
+      </svg>
     </div>
     <div class="mt-4 px-4 flex flex-col justify-center items-center gap-0.5">
-      <span class="text-lg font-medium">Campo Deportivo</span>
-      <span class="text-lg font-medium">Azcuénaga 4700-4798</span>
+      <span class="text-4xl font-medium mt-4">Azcuénaga 4759, Muñiz</span>
     </div>
     <div class="flex justify-center items-center gap-4 mt-8">
-      <div class="flex flex-col justify-center items-center">
-        <span class="text-2xl font-semibold">24</span>
-        <span class="text-gray-600 text-lg">OCTUBRE</span>
-      </div>
-      <span class="h-16 w-0.5 bg-gray-300"></span>
       <div>
-        <span class="font-semibold text-base">21:00 hasta 4:00 hs.</span>
+        <span class="font-semibold text-3xl">21:00 hasta 4:00 hs.</span>
       </div>
     </div>
     <div class="mt-12">
       <a
-        href="https://maps.app.goo.gl/CF5peiM7A9S3tjdK9"
+        href="https://maps.app.goo.gl/HLGvpffL8dx83SZ36"
         target="_blank"
         rel="noopener noreferrer"
-        class="flex items-center border border-white hover:border-primary text-white bg-primary px-20 py-4 rounded-4xl text-lg font-medium hover:text-primary hover:bg-white transition-colors"
+        class="flex items-center border border-white hover:border-primary text-white bg-primary px-16 py-4 rounded-4xl text-4xl font-medium hover:text-primary hover:bg-white transition-colors"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
+          class="size-8"
           fill="currentColor"
           viewBox="0 0 24 24"
         >
@@ -134,18 +453,16 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </section>
   <section
-    class="flex flex-col justify-center items-center bg-primary text-white px-6 py-8 mt-16 mb-32"
+    class="flex flex-col justify-center items-center px-6 py-8 mt-16 bg-primary text-white"
   >
     <!--?xml version="1.0" standalone="no"?-->
 
     <svg
       version="1.0"
       xmlns="http://www.w3.org/2000/svg"
-      width="256.000000pt"
-      height="256.000000pt"
       viewBox="0 0 256.000000 256.000000"
       preserveAspectRatio="xMidYMid meet"
-      class="size-30"
+      class="size-40"
     >
       <g
         transform="translate(0.000000,256.000000) scale(0.100000,-0.100000)"
@@ -204,50 +521,91 @@ m-440 -541 c-46 -230 -89 -441 -94 -469 -9 -44 -17 -55 -51 -77 -48 -32 -51
         ></path>
       </g>
     </svg>
-    <h2 class="mt-4 text-4xl font-medium text-center">Codigo de vestimenta</h2>
-    <span class="text-xl font-regular mt-4">Elegante Sport</span>
+    <h2 class="mt-4 text-5xl font-medium text-center">Codigo de vestimenta</h2>
+    <span class="text-3xl font-regular mt-4">Elegante Sport</span>
   </section>
 
   <section
-    class="flex flex-col justify-center items-center mt-16 mb-32 relative"
+    class="flex flex-col justify-center items-center px-4 bg-primary text-white pb-8"
   >
-    <div class="text-center z-20">
-      <span class="text-2xl font-medium">¡Confirma tu asistencia!</span>
-      <p class="text-center text-lg mt-4 mb-12 px-6">
+    <div class="mt-20 mb-4 w-full flex justify-center items-center">
+      <!--?xml version="1.0" standalone="no"?-->
+
+      <svg
+        version="1.0"
+        xmlns="http://www.w3.org/2000/svg"
+        class="size-30"
+        viewBox="0 0 512.000000 512.000000"
+        preserveAspectRatio="xMidYMid meet"
+      >
+        <g
+          transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+          fill="currentColor"
+          stroke="none"
+        >
+          <path
+            d="M1067 5105 c-339 -64 -541 -307 -484 -581 50 -234 272 -466 622 -651
+l100 -53 -525 0 c-379 -1 -535 -4 -560 -13 -19 -7 -44 -27 -57 -46 l-23 -34 0
+-521 c0 -498 1 -522 20 -553 23 -38 43 -50 99 -59 l41 -7 0 -1249 c0 -1378 -4
+-1289 64 -1322 31 -15 216 -16 2196 -16 2375 0 2205 -4 2243 59 16 27 17 119
+17 1279 l0 1249 41 7 c56 9 76 21 99 59 19 31 20 55 20 552 0 497 -1 521 -20
+552 -36 59 -19 58 -600 63 l-535 5 81 42 c433 226 680 541 636 810 -37 220
+-222 380 -498 428 -429 75 -916 -161 -1229 -595 -79 -110 -175 -273 -215 -365
+-18 -41 -36 -75 -40 -75 -4 0 -22 34 -40 75 -18 41 -60 121 -94 178 -248 417
+-551 664 -935 764 -123 32 -310 39 -424 18z m373 -251 c328 -87 614 -340 819
+-726 45 -84 108 -228 126 -285 l6 -23 -211 0 -211 0 -137 46 c-276 93 -558
+229 -732 353 -204 145 -315 321 -280 445 26 93 127 169 270 201 82 19 260 13
+350 -11z m2585 11 c146 -31 249 -106 275 -201 26 -94 -24 -209 -144 -329 -167
+-167 -443 -318 -840 -459 l-156 -56 -216 0 -215 0 6 23 c35 115 142 329 232
+464 274 412 696 634 1058 558z m-2075 -1660 l0 -375 -785 0 -785 0 0 375 0
+375 785 0 785 0 0 -375z m980 -1295 l0 -1670 -370 0 -370 0 0 1670 0 1670 370
+0 370 0 0 -1670z m1810 1295 l0 -375 -785 0 -785 0 0 375 0 375 785 0 785 0 0
+-375z m-2790 -1790 l0 -1175 -705 0 -705 0 0 1175 0 1175 705 0 705 0 0 -1175z
+m2630 0 l0 -1175 -705 0 -705 0 0 1175 0 1175 705 0 705 0 0 -1175z"
+          ></path>
+        </g>
+      </svg>
+    </div>
+    <p class="text-3xl text-left font-regular mt-4 mb-6 px-6">
+      ¡Lo más importante es que vengas a festejar conmigo! Si además querés
+      hacerme un regalo, te dejo mi cuenta.
+    </p>
+    <div class="flex flex-col items-start justify-start mt-8 text-left">
+      <span class="text-3xl font-medium"
+        ><b class="text-bg-primary">Alias:</b> mix.xv.milena</span
+      >
+      <span class="text-3xl font-medium"
+        ><b class="text-bg-primary">CVU:</b> 0000003100047206362936</span
+      >
+      <span class="text-3xl font-medium"
+        ><b class="text-bg-primary">Nombre:</b> Vanesa Paola Duarte</span
+      >
+    </div>
+  </section>
+
+  <section
+    class="flex flex-col justify-center items-center relative bg-primary text-white h-full pb-16"
+  >
+    <div class="text-center z-20 mt-40">
+      <span class="text-5xl font-medium greatVibes"
+        >¡Confirma tu asistencia!</span
+      >
+      <p class="text-center text-3xl mt-12 mb-20 px-6">
         Te estare esperando, porfavor confirma tu asistencia.
       </p>
       <a
         href="https://wa.me/5491164378724"
         target="_blank"
         rel="noopener noreferrer"
-        class="border border-white hover:border-primary text-white bg-primary px-20 py-4 rounded-4xl text-lg font-medium hover:text-primary hover:bg-white transition-colors"
+        class="border border-white hover:border-bg-primary text-primary bg-white px-16 py-4 rounded-4xl text-4xl font-medium hover:text-white hover:bg-primary transition-colors"
       >
         Confirmar asistencia
       </a>
     </div>
   </section>
-  <section class="flex flex-col justify-center items-center mt-16 mb-32 px-4">
-    <div class="mt-8 w-full flex justify-center items-center">
-      <img src={gift.src} alt="Regalo" class="size-30" />
-    </div>
-    <p class="text-lg text-center font-regular mt-4">
-      ¡Lo más importante es que vengas a festejar conmigo! Si además querés
-      hacerme un regalo, te dejo mi cuenta.
-    </p>
-    <div class="flex flex-col justify-center items-center mt-8">
-      <span class="text-xl font-medium"
-        ><b class="text-secondary">Alias:</b> mix.xv.milena</span
-      >
-      <span class="text-xl font-medium"
-        ><b class="text-secondary">CVU:</b> 0000003100047206362936</span
-      >
-      <span class="text-xl font-medium"
-        ><b class="text-secondary">Nombre:</b> Vanesa Paola Duarte</span
-      >
-    </div>
-  </section>
+
   <footer
-    class="bg-primary text-white flex flex-col justify-center items-center px-4 py-12 text-center text-lg"
+    class="bg-white text-primary flex flex-col justify-center items-center px-4 py-12 text-center text-3xl"
   >
     <p>¡Espero que puedas venir y compartir este momento conmigo!</p>
   </footer>
